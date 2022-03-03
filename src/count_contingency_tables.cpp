@@ -75,7 +75,7 @@ int sample_fraction_H_i(IntegerMatrix M, int i, double error=0.1){
         ++H_i;
         double new_ratio = H_i/H_i_plus;
         if (iter%100000 == 0){
-            if (abs(new_ratio - ratio) < error){ //replace with proper conditions depending on desired error
+            if (fabs(new_ratio - ratio) < error){ //replace with proper conditions depending on desired error
                 //std::cout << iter << std::endl << H_i << std::endl << H_i_plus << std::endl;
                 return round(new_ratio);
             }
@@ -117,7 +117,7 @@ int count_contingency_tables(const NumericVector& c1, const NumericVector& c2, d
     
     IntegerVector v_H(nrow-1);
     for (int i=0; i<nrow-1; ++i){
-        v_H[i] = sample_fraction_H_i(M, i, error=error);
+        v_H[i] = sample_fraction_H_i(M, i, error);
         n_contingency_tables *= v_H[i];
     }
     
