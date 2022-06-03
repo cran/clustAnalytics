@@ -1,7 +1,9 @@
 #include <vector>
 #include <map>
+#include <unordered_map>
 #include <cfloat>
 #include "graph.h"
+#include "cantor_hash.h"
 
 using namespace std;
 
@@ -11,7 +13,7 @@ Graph::Graph( vector<Edge> v, int graph_order, double lb, double ub, bool d){
     lower_bound = lb;
     upper_bound = ub;
     directed = d;
-    edge_list_m = map<pair<int,int>, double>();
+    edge_list_m = unordered_map<pair<int,int>, double, CantorHash>();
     adjacencies_list = vector<map<int, double> > (order);
     size=v.size();
     vector<pair<int,int> > edge_vector(size); //same as v but without weight information. Needed to call the sampling vector constructor.
@@ -106,15 +108,15 @@ void Graph::set_weight(int a, int b, double w, bool new_edge){
 }
 
 
-//samples non adjacent pair of edges
+//samples pair of edges
 pair<pair<int,int>, pair<int,int> > Graph::sample_pair_edges(){
     pair<int,int> ac = sampling_vector.rand_el(), bd;
-    bool not_adjacent = false;
-    while (not not_adjacent){
+    bool same = true;
+    while (same){
         bd = sampling_vector.rand_el();
-        if (bd.first != ac.first && bd.first != ac.second &&
-            bd.second != ac.first && bd.second != ac.second)
-            not_adjacent = true;
+        if (bd != ac){
+            same = false;
+        }
     }
     return make_pair(ac, bd);
 }
@@ -127,7 +129,7 @@ std::map<int,double> Graph::vertex_adjacencies(int v) const{
     return adjacencies_list[v];
 }
 
-const std::map<std::pair<int,int>, double>& Graph::edge_list_map() const{
+const std::unordered_map<std::pair<int,int>, double, CantorHash>& Graph::edge_list_map() const{
     return edge_list_m;
 }
 

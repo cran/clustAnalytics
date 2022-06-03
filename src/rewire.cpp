@@ -12,6 +12,9 @@ bool randomization_step(Graph &g, string weight_sel = "max_weight"){
     auto p = g.sample_pair_edges();
     int a = p.first.first, c = p.first.second,
         b = p.second.first, d = p.second.second;
+    if (b==c or a==d or a==b or c==d){
+        return false;
+    }
     //Rcout << "a=" << a << ", b=" << b << ", c=" << c << ", d=" << d << endl;
     double wAC = g.get_weight(a, c),
            wAD = g.get_weight(a, d),
@@ -20,9 +23,8 @@ bool randomization_step(Graph &g, string weight_sel = "max_weight"){
 
     double t;
     if (weight_sel == "max_weight"){
-        // this assumes the weights have no upper bound. Otherwise, it should be
-        // min(wAC, wBD, upper_bound-wAD, upper_bound-wBC)
-        t = min(wAC, wBD);
+        double upper_bound = g.get_upper_bound();
+        t = std::min({wAC, wBD, upper_bound-wAD, upper_bound-wBC});
         //Rcout << "t = " << t << endl;
     }
     else t = (wAC+wBD-wAD-wBC)/2;
