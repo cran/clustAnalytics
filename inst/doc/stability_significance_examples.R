@@ -29,7 +29,7 @@ rewired_ChesLower <- rewireCpp(foodwebs$ChesLower, weight_sel = "max_weight")
 ## -----------------------------------------------------------------------------
 # this corresponds to the club each member ended up with after the split, 
 # which we could consider the ground truth clustering for this graph.
-significance_table_karate <- evaluate_significance(karate, ground_truth=TRUE,
+significance_table_karate <- evaluate_significance(karate,
                                                    alg_list=list(Louvain=cluster_louvain, 
                                                                  "label prop"= cluster_label_prop, 
                                                                  walktrap=cluster_walktrap),
@@ -37,7 +37,7 @@ significance_table_karate <- evaluate_significance(karate, ground_truth=TRUE,
 significance_table_karate
 
 ## -----------------------------------------------------------------------------
-significance_table_karate_r <- evaluate_significance_r(karate, ground_truth=TRUE,
+significance_table_karate_r <- evaluate_significance_r(karate, 
                                                        alg_list=list(Louvain=cluster_louvain, 
                                                                  "label prop"= cluster_label_prop, 
                                                                  walktrap=cluster_walktrap),
@@ -57,7 +57,7 @@ significance_table_sbm
 
 ## -----------------------------------------------------------------------------
 data(package="clustAnalytics",g_forex)
-significance_table_karate_r <- evaluate_significance_r(karate, ground_truth=TRUE, 
+significance_table_karate_r <- evaluate_significance_r(karate,  
                                                    gt_clustering=V(karate)$Faction,
                                                    weight_sel = "const_var",
                                                    n_reps=5, w_max=1)

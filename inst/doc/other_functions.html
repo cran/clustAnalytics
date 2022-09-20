@@ -14,7 +14,19 @@
 
 <title>Other Functions</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -125,7 +137,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -144,32 +336,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(clustAnalytics)</span></code></pre></div>
 <div id="reduced_mutual_information" class="section level3">
 <h3>reduced_mutual_information</h3>
-<p>The package includes an implementation of Newman’s Reduced Mutual Information (RMI) , a version of the mutual information that is corrected for chance.</p>
+<p>The package includes an implementation of Newman’s Reduced Mutual
+Information (RMI) , a version of the mutual information that is
+corrected for chance.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">membership</span>(<span class="fu">cluster_louvain</span>(karate))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c2 <span class="ot">&lt;-</span> <span class="fu">V</span>(karate)<span class="sc">$</span>Faction</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">reduced_mutual_information</span>(c1, c2, <span class="at">method=</span><span class="st">&quot;approximation2&quot;</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.5135699</span></span></code></pre></div>
-<p>Just as with the standard mutual information, the RMI can be normalized as well:</p>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.627339</span></span></code></pre></div>
+<p>Just as with the standard mutual information, the RMI can be
+normalized as well:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reduced_mutual_information</span>(c1, c2, <span class="at">method=</span><span class="st">&quot;approximation2&quot;</span>, <span class="at">normalized=</span><span class="cn">TRUE</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.6621045</span></span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.6454721</span></span></code></pre></div>
 </div>
 <div id="barabasi_albert_blocks" class="section level3">
 <h3>barabasi_albert_blocks</h3>
-<p>The <code>barabasi_albert_blocks</code> function produces scale-free graphs using extended versions of the Barabási-Albert model that include a community structure. It generates the graph by iteratively adding vertices to an initial graph and joining them to the existing vertices using preferential attachment (existing higher degree vertices are more likely to receive new edges). Additionally, vertices are assigned labels indicating community membership, and the probability of one vertex connecting to another is affected by their community memberships according to a fitness matrix <code>B</code> (if a new vertex belongs to community <em>i</em>, the probability of connecting to a vertex of community <em>j</em> is proportional to <em>B_ij</em>).</p>
-<p>The parameters that need to be set are <code>m</code> the number of new edges per step, the vector <code>p</code> of label probabilities, the fitness matrix <code>B</code> (with the same dimensions as the length of <code>p</code>), and <code>t_max</code> the final graph order. The initial graph <code>G0</code> can be set manually, but if not, an appropriate graph will be generated with <code>m</code> edges per vertex, labels sampled from <code>p</code>, and edge probabilities proportional <code>B</code>.</p>
-<p>There are two variants of the model. If <code>type=&quot;Hajek&quot;</code>, new edges are connected with preferential attachment to any existing vertex but using the appropriate values of <code>B</code> as weights (see ). If <code>type=&quot;block_first&quot;</code>, new edges are connected first to a community with probability proportional to the values of <code>B</code>, and then a vertex is chosen within that community with regular preferential attachment. In this case, the resulting degree distribution is scale-free (see ).</p>
-<p>This is a simple example with just two communities and a graph of order 100 and size 400:</p>
+<p>The <code>barabasi_albert_blocks</code> function produces scale-free
+graphs using extended versions of the Barabási-Albert model that include
+a community structure. It generates the graph by iteratively adding
+vertices to an initial graph and joining them to the existing vertices
+using preferential attachment (existing higher degree vertices are more
+likely to receive new edges). Additionally, vertices are assigned labels
+indicating community membership, and the probability of one vertex
+connecting to another is affected by their community memberships
+according to a fitness matrix <code>B</code> (if a new vertex belongs to
+community <em>i</em>, the probability of connecting to a vertex of
+community <em>j</em> is proportional to <em>B_ij</em>).</p>
+<p>The parameters that need to be set are <code>m</code> the number of
+new edges per step, the vector <code>p</code> of label probabilities,
+the fitness matrix <code>B</code> (with the same dimensions as the
+length of <code>p</code>), and <code>t_max</code> the final graph order.
+The initial graph <code>G0</code> can be set manually, but if not, an
+appropriate graph will be generated with <code>m</code> edges per
+vertex, labels sampled from <code>p</code>, and edge probabilities
+proportional <code>B</code>.</p>
+<p>There are two variants of the model. If <code>type=&quot;Hajek&quot;</code>,
+new edges are connected with preferential attachment to any existing
+vertex but using the appropriate values of <code>B</code> as weights
+(see ). If <code>type=&quot;block_first&quot;</code>, new edges are connected
+first to a community with probability proportional to the values of
+<code>B</code>, and then a vertex is chosen within that community with
+regular preferential attachment. In this case, the resulting degree
+distribution is scale-free (see ).</p>
+<p>This is a simple example with just two communities and a graph of
+order 100 and size 400:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="dv">1</span>), <span class="at">ncol=</span><span class="dv">2</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">barabasi_albert_blocks</span>(<span class="at">m=</span><span class="dv">4</span>, <span class="at">p=</span><span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">B=</span>B, <span class="at">t_max=</span><span class="dv">100</span>, <span class="at">type=</span><span class="st">&quot;Hajek&quot;</span>, </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">sample_with_replacement =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(G, <span class="at">vertex.color=</span>(<span class="fu">V</span>(G)<span class="sc">$</span>label), <span class="at">vertex.label=</span><span class="cn">NA</span>, <span class="at">vertex.size=</span><span class="dv">10</span>)</span></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
 </div>
 <div id="apply_subgraphs" class="section level3">
 <h3>apply_subgraphs</h3>
-<p>The <code>apply_subgraphs</code> function is used internally in the package, but has also been made available to the user because it can be very convenient when working with clusters. It simply calls a function <code>f</code> on each of the communities of a graph (treated as it’s own <code>igraph</code> object), acting as a wrapper for the <code>vapply</code> function. The communities are given as a membership vector <code>com</code>.</p>
-<p>For a very simple example, we call it to obtain the order of each of the factions of the karate club graph:</p>
+<p>The <code>apply_subgraphs</code> function is used internally in the
+package, but has also been made available to the user because it can be
+very convenient when working with clusters. It simply calls a function
+<code>f</code> on each of the communities of a graph (treated as it’s
+own <code>igraph</code> object), acting as a wrapper for the
+<code>vapply</code> function. The communities are given as a membership
+vector <code>com</code>.</p>
+<p>For a very simple example, we call it to obtain the order of each of
+the factions of the karate club graph:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply_subgraphs</span>(<span class="at">g=</span>karate, <span class="at">com=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction, <span class="at">f=</span>gorder)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16 18</span></span></code></pre></div>
