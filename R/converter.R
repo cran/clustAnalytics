@@ -10,7 +10,7 @@
 igraph_to_edgelist <- function(g, sort=TRUE){
     el <- cbind(as_edgelist(g, names = FALSE), E(g)$weight)
     if (sort){
-        return(kdtools::lex_sort(el))
+        return(el[order(el[,1], el[,2]), ])
     }
     return(el)
 }
@@ -79,6 +79,9 @@ weighted_clustering_coefficient <- function(g, upper_bound=NULL){
     if (gorder(g) < 3){
         return(NA)
     }
+    if (!"weight" %in% names(edge.attributes(g))){
+        g <- make_graph_weighted(g)
+    }
     edgelist <- igraph_to_edgelist(g)
     if (is.null(upper_bound))
         upper_bound <- max(E(g)$weight)
@@ -100,6 +103,9 @@ weighted_clustering_coefficient <- function(g, upper_bound=NULL){
 weighted_transitivity <- function(g, upper_bound=NULL){
     if (gorder(g) < 3){
         return(NA)
+    }
+    if (!"weight" %in% names(edge.attributes(g))){
+        g <- make_graph_weighted(g)
     }
     edgelist <- igraph_to_edgelist(g)
     if (is.null(upper_bound))
