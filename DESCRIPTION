@@ -1,8 +1,8 @@
 Package: clustAnalytics
 Type: Package
 Title: Cluster Evaluation on Graphs
-Version: 0.5.2
-Date: 2022-11-09
+Version: 0.5.4
+Date: 2023-06-02
 Author: Martí Renedo Mirambell
 Maintainer: Martí Renedo Mirambell <marti.renedo@gmail.com>
 Description: Evaluates the stability and significance of clusters on 'igraph' graphs.
@@ -12,16 +12,16 @@ Description: Evaluates the stability and significance of clusters on 'igraph' gr
     <doi:10.1103/PhysRevE.101.042304>.
 License: GPL (>= 3)
 Imports: Rcpp (>= 1.0.1), mcclust, mclust, truncnorm, boot, fossil,
-        dplyr, Rdpack
+        aricode, dplyr, Rdpack
 LinkingTo: Rcpp
 RdMacros: Rdpack
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Suggests: igraphdata, knitr, rmarkdown, testthat,
 VignetteBuilder: knitr
 Encoding: UTF-8
 Depends: R (>= 2.10), igraph
 LazyData: true
 NeedsCompilation: yes
-Packaged: 2022-11-09 10:18:21 UTC; blaug
+Packaged: 2023-06-04 01:44:22 UTC; blaug
 Repository: CRAN
-Date/Publication: 2022-11-09 11:50:09 UTC
+Date/Publication: 2023-06-04 02:50:02 UTC
