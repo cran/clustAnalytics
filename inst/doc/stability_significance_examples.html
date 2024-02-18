@@ -14,26 +14,38 @@
 
 <title>Stability and Significance Examples</title>
 
-<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -51,55 +63,54 @@ pre > code.sourceCode { white-space: pre-wrap; }
 pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -133,7 +144,187 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -149,167 +340,210 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(clustAnalytics)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(clustAnalytics)</span></code></pre></div>
 <div id="scoring-functions" class="section level2">
 <h2>Scoring functions</h2>
-<p>To compute the scoring functions of a graph and its clusters, we call scoring_functions. Here we try it for the well known Zachary’s karate club graph, using the faction memberships as clusters. type=global gives us the scores of each cluster, while type=global gives us the weighted mean of the local scores, plus some additional global scores</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoring_functions</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction, <span class="at">type=</span><span class="st">&quot;local&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   size internal density edges inside av degree      FOMD expansion  cut ratio</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   16        0.8250000           99  6.187500 0.5000000  1.375000 0.07638889</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   18        0.7189542          110  6.111111 0.3333333  1.222222 0.07638889</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   conductance  norm cut   max ODF average ODF flake ODF density ratio</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  0.10000000 0.1909091 0.3636364  0.05651941         0     0.9074074</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  0.09090909 0.1909091 0.4117647  0.09140548         0     0.8937500</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   modularity</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1         NA</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2         NA</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">scoring_functions</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction, <span class="at">type=</span><span class="st">&quot;global&quot;</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          size internal density edges inside av degree      FOMD expansion</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] 17.05882        0.7688581     104.8235  6.147059 0.4117647  1.294118</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       cut ratio conductance  norm cut   max ODF average ODF flake ODF</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] 0.07638889  0.09518717 0.1909091 0.3891161  0.07498851         0</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      density ratio modularity graph_order n_clusters mean_cluster_size</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,]      0.900177  0.3714661          34          2                17</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       coverage global density ratio</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,] 0.9047619            0.8004386</span></span></code></pre></div>
-<p>Additionally, each of the scores is available individually as its own function, grouped together in the package as the <em>cluster scoring functions</em> family. They are simply called as follows, with the graph and the membership vector as arguments, and return a vector with the scores for each community:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cut_ratio</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.07638889 0.07638889</span></span></code></pre></div>
+<p>To compute the scoring functions of a graph and its clusters, we call
+scoring_functions. Here we try it for the well known Zachary’s karate
+club graph, using the faction memberships as clusters. type=global gives
+us the scores of each cluster, while type=global gives us the weighted
+mean of the local scores, plus some additional global scores</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">scoring_functions</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction, <span class="at">type=</span><span class="st">&quot;local&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt; This graph was created by an old(er) igraph version.</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt;   Call upgrade_graph() on it to use with the current igraph version</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;   For now we convert it on the fly...</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;   size internal density edges inside av degree      FOMD expansion  cut ratio</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; 1   16        0.8250000           99  6.187500 0.5000000  1.375000 0.07638889</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 2   18        0.7189542          110  6.111111 0.3333333  1.222222 0.07638889</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt;   conductance  norm cut   max ODF average ODF flake ODF density ratio</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; 1  0.10000000 0.1909091 0.3636364  0.05651941         0     0.9074074</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; 2  0.09090909 0.1909091 0.4117647  0.09140548         0     0.8937500</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;   modularity</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; 1         NA</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; 2         NA</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="fu">scoring_functions</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction, <span class="at">type=</span><span class="st">&quot;global&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt;          size internal density edges inside av degree      FOMD expansion</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; [1,] 17.05882        0.7688581     104.8235  6.147059 0.4117647  1.294118</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt;       cut ratio conductance  norm cut   max ODF average ODF flake ODF</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt; [1,] 0.07638889  0.09518717 0.1909091 0.3891161  0.07498851         0</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt;      density ratio modularity graph_order n_clusters mean_cluster_size</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt; [1,]      0.900177  0.3714661          34          2                17</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt;       coverage global density ratio</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">#&gt; [1,] 0.9047619            0.8004386</span></span></code></pre></div>
+<p>Additionally, each of the scores is available individually as its own
+function, grouped together in the package as the <em>cluster scoring
+functions</em> family. They are simply called as follows, with the graph
+and the membership vector as arguments, and return a vector with the
+scores for each community:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">cut_ratio</span>(karate, <span class="fu">V</span>(karate)<span class="sc">$</span>Faction)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; [1] 0.07638889 0.07638889</span></span></code></pre></div>
 </div>
 <div id="significance" class="section level2">
 <h2>Significance</h2>
-<p>To showcase the randomization process, we apply it to the Zachary’s karate club graph, with the default settings (positive weights with no upper bound, which suits this graph):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(karate)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 78/78 edges from 4b458a1 (vertex names):</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] Mr Hi  --Actor 2  Mr Hi  --Actor 3  Mr Hi  --Actor 4  Mr Hi  --Actor 5 </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] Mr Hi  --Actor 6  Mr Hi  --Actor 7  Mr Hi  --Actor 8  Mr Hi  --Actor 9 </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] Mr Hi  --Actor 11 Mr Hi  --Actor 12 Mr Hi  --Actor 13 Mr Hi  --Actor 14</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [13] Mr Hi  --Actor 18 Mr Hi  --Actor 20 Mr Hi  --Actor 22 Mr Hi  --Actor 32</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] Actor 2--Actor 3  Actor 2--Actor 4  Actor 2--Actor 8  Actor 2--Actor 14</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [21] Actor 2--Actor 18 Actor 2--Actor 20 Actor 2--Actor 22 Actor 2--Actor 31</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [25] Actor 3--Actor 4  Actor 3--Actor 8  Actor 3--Actor 9  Actor 3--Actor 10</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [29] Actor 3--Actor 14 Actor 3--Actor 28 Actor 3--Actor 29 Actor 3--Actor 33</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [33] Actor 4--Actor 8  Actor 4--Actor 13 Actor 4--Actor 14 Actor 5--Actor 7 </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [37] Actor 5--Actor 11 Actor 6--Actor 7  Actor 6--Actor 11 Actor 6--Actor 17</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + ... omitted several edges</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>rewired_karate <span class="ot">&lt;-</span> <span class="fu">rewireCpp</span>(karate, <span class="at">weight_sel =</span> <span class="st">&quot;max_weight&quot;</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(rewired_karate)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 121/121 edges from 5333b8e (vertex names):</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] Mr Hi   --Actor 3  Actor 11--Actor 28 Actor 8 --Actor 23 Actor 4 --Actor 30</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [5] Actor 3 --Actor 6  Actor 7 --Actor 33 Actor 8 --Actor 15 Actor 4 --Actor 28</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [9] Actor 9 --Actor 20 Actor 16--Actor 31 Actor 5 --Actor 27 Actor 2 --Actor 33</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [13] Actor 23--John A   Actor 11--Actor 24 Actor 4 --Actor 7  Actor 13--Actor 31</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [17] Actor 17--Actor 26 Actor 2 --Actor 26 Mr Hi   --Actor 9  Actor 6 --Actor 11</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [21] Mr Hi   --Actor 30 Actor 26--John A   Actor 4 --Actor 15 Actor 6 --Actor 26</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [25] Actor 3 --Actor 31 Actor 6 --Actor 32 Actor 31--Actor 33 Actor 3 --Actor 4 </span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [29] Actor 16--Actor 33 Actor 2 --Actor 14 Actor 7 --Actor 8  Actor 7 --Actor 24</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [33] Actor 19--Actor 29 Actor 6 --Actor 12 Actor 25--Actor 33 Actor 28--Actor 30</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [37] Actor 3 --Actor 26 Actor 11--Actor 33 Actor 9 --Actor 30 Actor 28--Actor 29</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + ... omitted several edges</span></span></code></pre></div>
-<p>If the graph is directed, the rewireCpp function automatically detects it and internally runs the implementation for directed graphs. The following example is a food network (where edges indicate predator-prey relationships) from the igraphdata package:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(foodwebs, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rewired_ChesLower <span class="ot">&lt;-</span> <span class="fu">rewireCpp</span>(foodwebs<span class="sc">$</span>ChesLower, <span class="at">weight_sel =</span> <span class="st">&quot;max_weight&quot;</span>)</span></code></pre></div>
-<p>Now we compute the scoring functions for the karate club graph. By default the clustering algorithms are Louvain, label propagation and Walktrap, but the function can take any list of clustering algorithms for igraph graphs.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this corresponds to the club each member ended up with after the split, </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># which we could consider the ground truth clustering for this graph.</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>significance_table_karate <span class="ot">&lt;-</span> <span class="fu">evaluate_significance</span>(karate,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">alg_list=</span><span class="fu">list</span>(<span class="at">Louvain=</span>cluster_louvain, </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                                                                 <span class="st">&quot;label prop&quot;</span><span class="ot">=</span> cluster_label_prop, </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                                                                 <span class="at">walktrap=</span>cluster_walktrap),</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>significance_table_karate</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                         Louvain  label prop    walktrap ground truth</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; size                  9.2941176 11.47058824 10.00000000  17.05882353</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; internal density      1.2998217  1.31334842  1.32254902   0.76885813</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; edges inside         43.2352941 64.47058824 51.82352941 104.82352941</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; av degree             4.7058824  5.29411765  5.05882353   6.14705882</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; FOMD                  0.2647059  0.29411765  0.26470588   0.41176471</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; expansion             4.1764706  3.00000000  3.47058824   1.29411765</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; cut ratio             0.1660937  0.13116472  0.14540629   0.07638889</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; conductance           0.3011246  0.22721733  0.25484480   0.09518717</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; norm cut              0.4357579  0.35234595  0.38131607   0.19090909</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; max ODF               0.5303555  0.42917902  0.51172969   0.38911607</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; average ODF           0.2286189  0.18617003  0.18493603   0.07498851</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; flake ODF             0.1470588  0.02941176  0.08823529   0.00000000</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; density ratio         0.8603938  0.87939735  0.86846364   0.90017702</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; modularity            0.3951348  0.39045036  0.41116042   0.37146614</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; clustering coef       0.6462293  0.66841298  0.61381521   0.53406848</span></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; graph_order          34.0000000 34.00000000 34.00000000  34.00000000</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n_clusters            4.0000000  4.00000000  4.00000000   2.00000000</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mean_cluster_size     8.5000000  8.50000000  8.50000000  17.00000000</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; coverage              0.6926407  0.77922078  0.74458874   0.90476190</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; global density ratio  0.7020536  0.73664056  0.74273256   0.80043860</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; VIdist_to_GT          0.9353020  0.73220816  0.87293838   0.00000000</span></span></code></pre></div>
-<p>With the function <code>evaluate_significance_r</code> we compute the scoring functions as above, and we compare the results to those of a distribution of randomized graphs.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>significance_table_karate_r <span class="ot">&lt;-</span> <span class="fu">evaluate_significance_r</span>(karate, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                                       <span class="at">alg_list=</span><span class="fu">list</span>(<span class="at">Louvain=</span>cluster_louvain, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                                                                 <span class="st">&quot;label prop&quot;</span><span class="ot">=</span> cluster_label_prop, </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                                                                 <span class="at">walktrap=</span>cluster_walktrap),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                                                       <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                                                       <span class="at">weight_sel=</span><span class="st">&quot;max_weight&quot;</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                                                       <span class="at">n_reps=</span><span class="dv">10</span>)</span></code></pre></div>
-<p>Now we generate a graph from a stochastic block model in which we set very strong clusters (the elements in the diagonal of the matrix are much larger than the rest, so the probability of intra-cluster edges is much higher than that of inter-cluster edges).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pm <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">001</span>, .<span class="dv">001</span>, .<span class="dv">003</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                .<span class="dv">001</span>, .<span class="dv">2</span>, .<span class="dv">005</span>, .<span class="dv">002</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                .<span class="dv">001</span>, .<span class="dv">005</span>, .<span class="dv">2</span>, .<span class="dv">001</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                .<span class="dv">003</span>, .<span class="dv">002</span>, .<span class="dv">001</span>, .<span class="dv">3</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">ncol=</span><span class="dv">4</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>g_sbm <span class="ot">&lt;-</span> <span class="fu">sample_sbm</span>(<span class="dv">100</span>, <span class="at">pref.matrix=</span>pm, <span class="at">block.sizes=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>))</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g_sbm)<span class="sc">$</span>weight <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>significance_table_sbm <span class="ot">&lt;-</span> <span class="fu">evaluate_significance</span>(g_sbm)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>significance_table_sbm</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                           Louvain   label prop     walktrap</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; size                 2.500000e+01 2.228000e+01 2.500000e+01</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; internal density     2.525000e-01 2.866667e-01 2.525000e-01</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; edges inside         7.575000e+01 6.774000e+01 7.575000e+01</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; av degree            3.030000e+00 2.920000e+00 3.030000e+00</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; FOMD                 4.000000e-01 3.800000e-01 4.000000e-01</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; expansion            1.600000e-01 3.800000e-01 1.600000e-01</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; cut ratio            2.133333e-03 4.579309e-03 2.133333e-03</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; conductance          2.615988e-02 6.958922e-02 2.615988e-02</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; norm cut             3.500798e-02 8.278366e-02 3.500798e-02</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; max ODF              2.013889e-01 2.526032e-01 2.013889e-01</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; average ODF          2.311905e-02 6.387302e-02 2.311905e-02</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; flake ODF            0.000000e+00 1.000000e-02 0.000000e+00</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; density ratio        9.913993e-01 9.852792e-01 9.913993e-01</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; modularity           7.129217e-01 6.955677e-01 7.129217e-01</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; clustering coef      2.551161e-01 2.778047e-01 2.551161e-01</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; graph_order          1.000000e+02 1.000000e+02 1.000000e+02</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n_clusters           4.000000e+00 5.000000e+00 4.000000e+00</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mean_cluster_size    2.500000e+01 2.000000e+01 2.500000e+01</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; coverage             9.742765e-01 9.389068e-01 9.742765e-01</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; global density ratio 9.831023e-01 9.643681e-01 9.831023e-01</span></span></code></pre></div>
-<p>And as an example of usage for a complete weighted graphs with weights bounded between 0 and 1, we have a graph built from correlations of currency exchange rate returns, in particular from January 2009 with the 13 most traded currencies. In this case we have to set w_max to 1 to keep the upper bound when rewiring the edges.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package=</span><span class="st">&quot;clustAnalytics&quot;</span>,g_forex)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>significance_table_karate_r <span class="ot">&lt;-</span> <span class="fu">evaluate_significance_r</span>(karate,  </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">weight_sel =</span> <span class="st">&quot;const_var&quot;</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">n_reps=</span><span class="dv">5</span>, <span class="at">w_max=</span><span class="dv">1</span>)</span></code></pre></div>
+<p>To showcase the randomization process, we apply it to the Zachary’s
+karate club graph, with the default settings (positive weights with no
+upper bound, which suits this graph):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">data</span>(karate, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">E</span>(karate)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; This graph was created by an old(er) igraph version.</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;   Call upgrade_graph() on it to use with the current igraph version</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;   For now we convert it on the fly...</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; + 78/78 edges from 4b458a1 (vertex names):</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt;  [1] Mr Hi  --Actor 2  Mr Hi  --Actor 3  Mr Hi  --Actor 4  Mr Hi  --Actor 5 </span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt;  [5] Mr Hi  --Actor 6  Mr Hi  --Actor 7  Mr Hi  --Actor 8  Mr Hi  --Actor 9 </span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt;  [9] Mr Hi  --Actor 11 Mr Hi  --Actor 12 Mr Hi  --Actor 13 Mr Hi  --Actor 14</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co">#&gt; [13] Mr Hi  --Actor 18 Mr Hi  --Actor 20 Mr Hi  --Actor 22 Mr Hi  --Actor 32</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co">#&gt; [17] Actor 2--Actor 3  Actor 2--Actor 4  Actor 2--Actor 8  Actor 2--Actor 14</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt; [21] Actor 2--Actor 18 Actor 2--Actor 20 Actor 2--Actor 22 Actor 2--Actor 31</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; [25] Actor 3--Actor 4  Actor 3--Actor 8  Actor 3--Actor 9  Actor 3--Actor 10</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; [29] Actor 3--Actor 14 Actor 3--Actor 28 Actor 3--Actor 29 Actor 3--Actor 33</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; [33] Actor 4--Actor 8  Actor 4--Actor 13 Actor 4--Actor 14 Actor 5--Actor 7 </span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; [37] Actor 5--Actor 11 Actor 6--Actor 7  Actor 6--Actor 11 Actor 6--Actor 17</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; + ... omitted several edges</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>rewired_karate <span class="ot">&lt;-</span> <span class="fu">rewireCpp</span>(karate, <span class="at">weight_sel =</span> <span class="st">&quot;max_weight&quot;</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="fu">E</span>(rewired_karate)</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt; + 125/125 edges from 3e37b09 (vertex names):</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;  [1] Actor 29--Actor 32 Actor 4 --Actor 20 Actor 2 --Actor 11 Actor 3 --Actor 32</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt;  [5] Actor 9 --Actor 31 Actor 3 --Actor 11 Actor 12--Actor 33 Actor 18--Actor 29</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt;  [9] Actor 8 --Actor 25 Actor 26--Actor 32 Actor 2 --Actor 4  Actor 5 --Actor 24</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; [13] Mr Hi   --Actor 22 Actor 2 --Actor 9  Actor 7 --Actor 28 Actor 3 --Actor 9 </span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; [17] Actor 4 --Actor 22 Actor 21--Actor 29 Actor 23--Actor 30 Actor 8 --Actor 27</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; [21] Actor 20--John A   Actor 4 --Actor 32 Actor 19--John A   Actor 7 --Actor 28</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; [25] Actor 17--Actor 21 Actor 9 --Actor 20 Actor 7 --Actor 13 Actor 6 --Actor 25</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="co">#&gt; [29] Actor 19--Actor 26 Actor 32--Actor 33 Mr Hi   --Actor 4  Actor 14--Actor 30</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="co">#&gt; [33] Actor 3 --Actor 16 Actor 24--Actor 32 Actor 13--Actor 19 Mr Hi   --Actor 3 </span></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt; [37] Actor 27--Actor 33 Actor 3 --Actor 7  Actor 18--Actor 27 Actor 14--Actor 32</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; + ... omitted several edges</span></span></code></pre></div>
+<p>If the graph is directed, the rewireCpp function automatically
+detects it and internally runs the implementation for directed graphs.
+The following example is a food network (where edges indicate
+predator-prey relationships) from the igraphdata package:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">data</span>(foodwebs, <span class="at">package=</span><span class="st">&quot;igraphdata&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>rewired_ChesLower <span class="ot">&lt;-</span> <span class="fu">rewireCpp</span>(foodwebs<span class="sc">$</span>ChesLower, <span class="at">weight_sel =</span> <span class="st">&quot;max_weight&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; This graph was created by an old(er) igraph version.</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt;   Call upgrade_graph() on it to use with the current igraph version</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt;   For now we convert it on the fly...</span></span></code></pre></div>
+<p>Now we compute the scoring functions for the karate club graph. By
+default the clustering algorithms are Louvain, label propagation and
+Walktrap, but the function can take any list of clustering algorithms
+for igraph graphs.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># this corresponds to the club each member ended up with after the split, </span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># which we could consider the ground truth clustering for this graph.</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>significance_table_karate <span class="ot">&lt;-</span> <span class="fu">evaluate_significance</span>(karate,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                                                   <span class="at">alg_list=</span><span class="fu">list</span>(<span class="at">Louvain=</span>cluster_louvain, </span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>                                                                 <span class="st">&quot;label prop&quot;</span><span class="ot">=</span> cluster_label_prop, </span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>                                                                 <span class="at">walktrap=</span>cluster_walktrap),</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>                                                   <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>significance_table_karate</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;                          Louvain  label prop    walktrap ground truth</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; size                  9.58823529 13.82352941 10.00000000  17.05882353</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; internal density      1.29491979  1.06591696  1.32254902   0.76885813</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; edges inside         50.35294118 83.35294118 51.82352941 104.82352941</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; av degree             5.05882353  5.82352941  5.05882353   6.14705882</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; FOMD                  0.26470588  0.35294118  0.26470588   0.41176471</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; expansion             3.47058824  1.94117647  3.47058824   1.29411765</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; cut ratio             0.14311885  0.09379685  0.14540629   0.07638889</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; conductance           0.25696234  0.14357705  0.25484480   0.09518717</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; norm cut              0.37937069  0.24347335  0.38131607   0.19090909</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt; max ODF               0.43576990  0.39078720  0.51172969   0.38911607</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="co">#&gt; average ODF           0.18336040  0.11416379  0.18493603   0.07498851</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="co">#&gt; flake ODF             0.05882353  0.00000000  0.08823529   0.00000000</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="co">#&gt; density ratio         0.87751142  0.90424105  0.86846364   0.90017702</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="co">#&gt; modularity            0.41978961  0.39907955  0.41116042   0.37146614</span></span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a><span class="co">#&gt; clustering coef       0.60467857  0.53726394  0.61381521   0.53406848</span></span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a><span class="co">#&gt; graph_order          34.00000000 34.00000000 34.00000000  34.00000000</span></span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a><span class="co">#&gt; n_clusters            4.00000000  3.00000000  4.00000000   2.00000000</span></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a><span class="co">#&gt; mean_cluster_size     8.50000000 11.33333333  8.50000000  17.00000000</span></span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a><span class="co">#&gt; coverage              0.74458874  0.85714286  0.74458874   0.90476190</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a><span class="co">#&gt; global density ratio  0.75864388  0.78814383  0.74273256   0.80043860</span></span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a><span class="co">#&gt; VIdist_to_GT          0.90782167  0.42166505  0.87293838   0.00000000</span></span></code></pre></div>
+<p>With the function <code>evaluate_significance_r</code> we compute the
+scoring functions as above, and we compare the results to those of a
+distribution of randomized graphs.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>significance_table_karate_r <span class="ot">&lt;-</span> <span class="fu">evaluate_significance_r</span>(karate, </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>                                                       <span class="at">alg_list=</span><span class="fu">list</span>(<span class="at">Louvain=</span>cluster_louvain, </span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                                                                 <span class="st">&quot;label prop&quot;</span><span class="ot">=</span> cluster_label_prop, </span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                                                                 <span class="at">walktrap=</span>cluster_walktrap),</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>                                                       <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction,</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>                                                       <span class="at">weight_sel=</span><span class="st">&quot;max_weight&quot;</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>                                                       <span class="at">n_reps=</span><span class="dv">10</span>)</span></code></pre></div>
+<p>Now we generate a graph from a stochastic block model in which we set
+very strong clusters (the elements in the diagonal of the matrix are
+much larger than the rest, so the probability of intra-cluster edges is
+much higher than that of inter-cluster edges).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>pm <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="fu">c</span>(.<span class="dv">3</span>, .<span class="dv">001</span>, .<span class="dv">001</span>, .<span class="dv">003</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>                .<span class="dv">001</span>, .<span class="dv">2</span>, .<span class="dv">005</span>, .<span class="dv">002</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>                .<span class="dv">001</span>, .<span class="dv">005</span>, .<span class="dv">2</span>, .<span class="dv">001</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>                .<span class="dv">003</span>, .<span class="dv">002</span>, .<span class="dv">001</span>, .<span class="dv">3</span>), <span class="at">nrow=</span><span class="dv">4</span>, <span class="at">ncol=</span><span class="dv">4</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>g_sbm <span class="ot">&lt;-</span> <span class="fu">sample_sbm</span>(<span class="dv">100</span>, <span class="at">pref.matrix=</span>pm, <span class="at">block.sizes=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">25</span>))</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">E</span>(g_sbm)<span class="sc">$</span>weight <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>significance_table_sbm <span class="ot">&lt;-</span> <span class="fu">evaluate_significance</span>(g_sbm)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>significance_table_sbm</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt;                           Louvain   label prop     walktrap</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; size                 2.502000e+01 2.514000e+01 2.502000e+01</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; internal density     2.501681e-01 2.467388e-01 2.501681e-01</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; edges inside         7.500000e+01 7.536000e+01 7.500000e+01</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; av degree            3.000000e+00 2.980000e+00 3.000000e+00</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; FOMD                 3.700000e-01 3.800000e-01 3.700000e-01</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; expansion            1.000000e-01 1.400000e-01 1.000000e-01</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; cut ratio            1.329967e-03 1.847134e-03 1.329967e-03</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; conductance          1.917500e-02 2.550894e-02 1.917500e-02</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; norm cut             2.442969e-02 3.281781e-02 2.442969e-02</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; max ODF              2.614286e-01 3.740476e-01 2.614286e-01</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; average ODF          1.985714e-02 3.259524e-02 1.985714e-02</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; flake ODF            0.000000e+00 0.000000e+00 0.000000e+00</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt; density ratio        9.937280e-01 9.919314e-01 9.937280e-01</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt; modularity           7.222252e-01 7.133459e-01 7.222252e-01</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; clustering coef      2.726390e-01 2.764234e-01 2.725541e-01</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt; graph_order          1.000000e+02 1.000000e+02 1.000000e+02</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; n_clusters           4.000000e+00 4.000000e+00 4.000000e+00</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt; mean_cluster_size    2.500000e+01 2.500000e+01 2.500000e+01</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">#&gt; coverage             9.836066e-01 9.770492e-01 9.836066e-01</span></span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="co">#&gt; global density ratio 9.893216e-01 9.848505e-01 9.893216e-01</span></span></code></pre></div>
+<p>And as an example of usage for a complete weighted graphs with
+weights bounded between 0 and 1, we have a graph built from correlations
+of currency exchange rate returns, in particular from January 2009 with
+the 13 most traded currencies. In this case we have to set w_max to 1 to
+keep the upper bound when rewiring the edges.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package=</span><span class="st">&quot;clustAnalytics&quot;</span>,g_forex)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>significance_table_karate_r <span class="ot">&lt;-</span> <span class="fu">evaluate_significance_r</span>(karate,  </span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>                                                   <span class="at">gt_clustering=</span><span class="fu">V</span>(karate)<span class="sc">$</span>Faction,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>                                                   <span class="at">weight_sel =</span> <span class="st">&quot;const_var&quot;</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>                                                   <span class="at">n_reps=</span><span class="dv">5</span>, <span class="at">w_max=</span><span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="stability" class="section level2">
 <h2>Stability</h2>
-<p>Here we perform a nonparametric bootstrap to the karate club graph and the same selection of algorithms. For each instance, the set of vertices is resampled, the induced graph is obtained by taking the new set of vertices with the induced edges from the original graph, and the clustering algorithms are applied. Then, these results are compared to the induced original clusterings using several metrics: the variation of information (VI), normalized reduced mutual information (NRMI) and both adjusted and regular Rand index (Rand and adRand):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>b_karate <span class="ot">&lt;-</span> <span class="fu">boot_alg_list</span>(<span class="at">g=</span>karate, <span class="at">return_data=</span><span class="cn">FALSE</span>, <span class="at">R=</span><span class="dv">99</span>) </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>b_karate</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              Louvain label prop  walktrap</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; VI         0.3209787  0.3506893 0.2361190</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; AMI        0.5640858  0.4734035 0.6579530</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NRMI       0.4861319  0.4172000 0.6374960</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rand       0.8197843  0.7657142 0.8617188</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; AdRand     0.5750624  0.5023499 0.6753565</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n_clusters 5.2525253  5.3131313 5.2222222</span></span></code></pre></div>
+<p>Here we perform a nonparametric bootstrap to the karate club graph
+and the same selection of algorithms. For each instance, the set of
+vertices is resampled, the induced graph is obtained by taking the new
+set of vertices with the induced edges from the original graph, and the
+clustering algorithms are applied. Then, these results are compared to
+the induced original clusterings using several metrics: the variation of
+information (VI), normalized reduced mutual information (NRMI) and both
+adjusted and regular Rand index (Rand and adRand):</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>b_karate <span class="ot">&lt;-</span> <span class="fu">boot_alg_list</span>(<span class="at">g=</span>karate, <span class="at">return_data=</span><span class="cn">FALSE</span>, <span class="at">R=</span><span class="dv">99</span>) </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>b_karate</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;              Louvain label prop  walktrap</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; VI         0.2919767  0.2978857 0.2688052</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; AMI        0.5989331  0.5022476 0.6036314</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">#&gt; NRMI       0.5469674  0.4840265 0.5793962</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="co">#&gt; Rand       0.8482508  0.7714039 0.8445417</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; AdRand     0.6292781  0.5324701 0.6391575</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">#&gt; n_clusters 6.2121212  4.7070707 5.5555556</span></span></code></pre></div>
 <p>And the same for the stochastic block model graph:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>b_sbm <span class="ot">&lt;-</span> <span class="fu">boot_alg_list</span>(<span class="at">g=</span>g_sbm, <span class="at">return_data=</span><span class="cn">FALSE</span>, <span class="at">R=</span><span class="dv">99</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>b_sbm</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               Louvain label prop  walktrap</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; VI         0.07928489  0.1566356 0.0810360</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; AMI        0.85838224  0.7322571 0.8520915</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NRMI       0.89980139  0.8115248 0.8989406</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rand       0.95968779  0.9213427 0.9615182</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; AdRand     0.88557353  0.7668925 0.8902052</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; n_clusters 6.21212121  8.0404040 6.4646465</span></span></code></pre></div>
-<p>We can clearly see that for all metrics, the results are much more stable, which makes sense because we created the sbm graph with very strong clusters.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>b_sbm <span class="ot">&lt;-</span> <span class="fu">boot_alg_list</span>(<span class="at">g=</span>g_sbm, <span class="at">return_data=</span><span class="cn">FALSE</span>, <span class="at">R=</span><span class="dv">99</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>b_sbm</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#&gt;               Louvain label prop   walktrap</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt; VI         0.08033681  0.1695702 0.07867882</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#&gt; AMI        0.85363379  0.7778300 0.85872634</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="co">#&gt; NRMI       0.90244126  0.7583457 0.90289020</span></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="co">#&gt; Rand       0.96163045  0.9379635 0.96591980</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#&gt; AdRand     0.89137093  0.8038377 0.90397096</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="co">#&gt; n_clusters 6.66666667  8.1313131 6.62626263</span></span></code></pre></div>
+<p>We can clearly see that for all metrics, the results are much more
+stable, which makes sense because we created the sbm graph with very
+strong clusters.</p>
 </div>
 
 
